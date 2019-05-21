@@ -1,0 +1,76 @@
+#VRML V2.0 utf8
+
+#TimeSensor & ColorInterpolator
+
+DEF T Transform {
+	children [
+		Transform {
+			translation -1 0 0
+			children Shape {
+				geometry Cone{}
+				appearance DEF A Appearance {
+					material DEF M Material {
+						diffuseColor .1 0 .5
+					}
+				}
+			}
+		}
+		Transform{
+		translation 0 -3 0
+		
+	children Shape {
+				geometry Sphere {}
+				appearance USE A 
+			}
+			}
+		Transform {
+			translation 1 0 0
+			children Shape {
+				geometry Box{}
+				appearance USE A
+			}
+		}
+		
+	]
+}
+
+DEF CI ColorInterpolator {
+	key[0 .2 .4 .6 .8 1]
+	keyValue[.8 .2 .2  .2 .8 .2 .2 .2 .8 .8 .8 .8 1 0 1 .8 .2 .2]
+}
+
+DEF TS TimeSensor {
+	loop TRUE 
+	cycleInterval 10
+}
+
+DEF P PositionInterpolator {
+	key [0, 1]
+	keyValue [0 0 0, 1 .9 -3]
+}
+
+ROUTE TS.fraction_changed TO CI.set_fraction
+ROUTE CI.value_changed TO M.set_diffuseColor
+
+ROUTE TS.fraction_changed TO P.set_fraction
+ROUTE P.value_changed TO T.set_translation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+Studenten - Name, Vorname, Adresse, Alter, Studiumjahr, Weiblich/Mannlich, Augen, Haare - schwarz/blond, kurz lang
+
+10 Studenten eintragen >> Studente.txt
+am bildschirm wie viele sind blaue Augen, Name ... etc.
+

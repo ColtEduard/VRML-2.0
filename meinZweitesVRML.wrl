@@ -1,0 +1,27 @@
+#VRML V2.0 utf8
+
+DEF	Prisma Shape {
+	
+		geometry IndexedFaceSet {
+			coord Coordinate {point	[
+				0 0 0 #Punkt A
+				1 0 0 #Punkt B
+				0 1 0 #Punkt C
+				0 0 1 #Punkt D
+				1 0 1 #Punkt E
+				0 1 1 #Punkt F
+			]}
+
+			coordIndex [0 2 1 -1 0 1 4 3 -1 1 2 5 4 -1]
+			#solid FALSE
+		} #IndexedFaceSet
+
+
+		appearance Appearance {
+			material Material {
+				diffuseColor 0 1 0
+			} 
+
+		} #Appearance
+	} #Prisma
+

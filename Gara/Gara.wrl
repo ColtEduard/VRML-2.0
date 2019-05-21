@@ -1,0 +1,263 @@
+#VRML V2.0 utf8
+#cladire
+Transform{
+	translation 0 0 0
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 Shape {
+			appearance      Appearance{
+							material Material{diffuseColor 255 0 0 }
+							texture ImageTexture {
+								url "brickTexture.jpg"
+			}
+					}#Appearance		
+
+			geometry        Box{
+							size 	2 5 2
+					} # Box
+		}#Shape
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+#geamd1
+Transform{
+	translation 1 -0.3 0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 DEF Window Shape {
+			appearance      Appearance{
+							material Material{}	
+							texture ImageTexture {
+								url "windowTexture.png"
+			}
+					}#Appearance		
+
+			geometry        Box{
+							size 	0.5 0.6 0.3
+					} # Box
+		}#Shape
+		
+         ] # children outer transform node
+	
+} # outer transform node
+#geamd2
+Transform{
+	translation 2 -0.3 0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		USE Window
+		
+		
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+#geams1
+Transform{
+	translation -1 -0.3 0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 USE Window
+		
+         ] # children outer transform node
+	
+} # outer transform node
+#geams2
+Transform{
+	translation -2 -0.3 0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 USE Window
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+
+#geamspate1
+Transform{
+	translation 1 -0.3 -0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		USE Window
+		
+         ] # children outer transform node
+	
+} # outer transform node
+#geamspate 2
+Transform{
+	translation 2 -0.3 -0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 USE Window
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+#geamspate3
+Transform{
+	translation -1 -0.3 -0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 USE Window
+		
+         ] # children outer transform node
+	
+} # outer transform node
+#geamspate4
+Transform{
+	translation -2 -0.3 -0.9
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 USE Window
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+
+#usa
+Transform{
+	translation -0.21 -0.6 1
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 DEF Door Shape {
+			appearance      Appearance{
+							material Material{}	
+							#texture ImageTexture {
+								#url "doorTexture.jpg"
+			#}
+					}#Appearance		
+
+			geometry        Box{
+							size 	0.8 0.4 0.2
+					} # Box
+			
+			
+		}#Shape
+		
+		
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+#usa
+Transform{
+	translation 0.21 -0.6 1
+	rotation	0 0 1 1.5708
+	children[	
+		
+		 USE Door
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+#manerUsaDreapta
+Transform{
+	translation 0.12 -0.6 1.09
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 DEF DoorHandle Shape {
+			appearance      Appearance{
+							material Material{diffuseColor 0 0 0 }									
+					}#Appearance		
+
+			geometry        Sphere{
+							radius 0.06
+					} # Sphere
+			
+			
+		}#Shape
+		
+		
+		
+         ] # children outer transform node
+	
+} # outer transform node
+#manerUsaStanga
+Transform{
+	translation -0.12 -0.6 1.09
+	rotation	0 0 1 1.5708
+	children[	
+		
+		
+		 USE DoorHandle
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+#acoperis Dreapta
+Transform{
+	translation 1.38 1.65 0
+	rotation	0 0 1 2.6
+	children[	
+		
+		
+		 DEF Roof Shape {
+			appearance      Appearance{
+							material Material{}
+							texture ImageTexture {
+								url "roofTexture.jpg"
+									
+			}
+					}#Appearance		
+
+			geometry        Box{
+							size 	3.29 0.1 2.2
+					} # Box
+			
+			
+		}#Shape
+		
+		
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+#acoperis Stanga
+Transform{
+	translation -1.38 1.65 0
+	rotation	0 0 -1 2.6
+	children[	
+		
+		
+		USE Roof
+		
+		
+		
+         ] # children outer transform node
+	
+} # outer transform node
+
+
+
+
