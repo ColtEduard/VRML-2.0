@@ -1,0 +1,30 @@
+#VRML V2.0 utf8
+
+Group {
+	children[
+		DEF TS TouchSensor {}
+		
+		Shape {
+			appearance Appearance{
+				material Material {
+					diffuseColor 0.5 0.5 0
+				}  
+				
+				geometry Sphere{}
+		}
+			
+			DEF HighLight DirectionalLight{
+				color 1 0 0 
+				on FALSE
+			}
+	]
+
+	ROUTE TS.isActive TO HighLight.set_on
+}
+
+
+
+
+
+
+

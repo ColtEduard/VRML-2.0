@@ -1,0 +1,48 @@
+#VRML V2.0 utf8
+
+#PositionInterpolator
+
+DEF T Transform{
+	translation 0 .1 0
+		children [
+			Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor .1 .5 .1
+					}
+					
+				}
+				
+				geometry Cone {
+						
+				}
+			}
+		]
+}
+
+DEF TS TimeSensor {
+	loop TRUE 
+	cycleInterval 2
+}
+
+DEF P PositionInterpolator {
+	key [0, 1]
+	keyValue [0 0 0, 0 0 5]
+}
+
+DEF PI PositionInterpolator {
+	key [0, 1]
+	keyValue [0 0 0, -2 0 -2]
+}
+
+ROUTE TS.fraction_changed TO PI.set_fraction
+ROUTE PI.value_changed TO T.set_translation
+ROUTE TS.fraction_changed TO P.set_fraction
+ROUTE P.value_changed TO T.set_translation
+
+
+
+
+
+
+

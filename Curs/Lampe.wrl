@@ -1,0 +1,86 @@
+#VRML V1.0 ascii
+
+Separator {
+	DEF Lampe Separator {
+		Material {
+			diffuseColor 1 .5 .5
+			ambienColor .9 .5 .5
+		}
+		
+		Separator {
+		# Wire
+			Transform {
+				translation 0 .25 0
+			}
+			
+			Cube {
+				width 0.01
+				height 0.5
+				depth 0.01
+			}
+		}
+	}
+	
+	Separator {
+		Material {
+			diffuseColor 1 .0 .0  # .5 .3 .3
+			emissiveColor .2 .2 .2
+			transparency .3
+		}
+	
+		Transform {
+			translation 0 0 0
+		}
+		Cone {
+			bottomRadius .5
+			height .25
+			parts ALL
+		}
+		
+		Material {
+			diffuseColor 1 .5 .5
+			ambienColor .9 .5 .5
+		}
+		
+		Separator {
+			#Light bulb
+			
+			Transform {
+				translation 0 -.15 0
+			}
+			
+			PointLight {
+				on TRUE 
+				color 1 0 0
+				intensity 1
+				location .1 .5 .1
+			}
+			
+			Material {
+				diffuseColor .3 .3 .5
+				ambienColor .3 .3 .35
+				location .1 .5 .1
+			}
+			
+			Material {
+				diffuseColor .3 .3 .5
+				ambienColor .3 .3 .35
+				specularColor .7 .7 .8
+				transparency .3
+			}
+			
+			Sphere {
+				radius .1
+			}
+			
+		}
+		
+	}	
+}
+
+
+
+
+
+
+

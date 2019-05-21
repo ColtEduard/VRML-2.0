@@ -1,0 +1,285 @@
+#VRML V2.0 utf8
+
+NavigationInfo { 
+   type "EXAMINE" 
+   headlight TRUE
+}
+
+Viewpoint { 
+   description "Front"
+   position 7 0 5
+   orientation 0 1 0 .79
+   fieldOfView 1.2
+}
+
+Viewpoint { 
+   description "Right"
+   position 0 0 9 
+   orientation 0 0 0 .10
+   fieldOfView 1.5
+}
+
+Viewpoint { 
+   description "Left"
+   position -7 0 7
+   orientation 0 1 0 -.79
+}
+
+
+
+SpotLight {
+	on TRUE
+	intensity 1
+	color 0 0 1
+	location 4 2 0
+	direction 5 0 0
+	attenuation	1 0 0
+	radius 10 
+	cutOffAngle	0.78
+	beamWidth 1.57
+} # end SpotLight	 
+
+
+# Headlight
+PROTO Headlight [
+	field SFColor color 0.9 0.9 0
+]
+{
+	Transform {
+		translation	2.45 -.2 0
+		scale 1 1 1
+		rotation 0 0 1 1.57
+
+		children Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.9 0.9 0
+				} # end Material
+			} # end Appearance
+
+			geometry Box {
+				size 0.15 0.15 0.25
+			} # end Box
+
+		} # end Shape
+	} # end Transform
+} # end PROTO
+
+Transform {
+	translation 0 0 -1
+	children [
+		Headlight {
+		}
+	]
+}
+
+Transform {
+	translation 0 0 1
+	children [
+		Headlight {
+		}
+	]
+}
+
+# Headlight light
+
+# Train Body - Base
+Transform {
+	translation	0 0 0				   
+	scale 1 1 1
+
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.7 0 0
+			} # end Material
+		} # end Appearance
+	   
+		geometry Box {
+			size 5 1 3
+		} # end Box
+
+	} # end Shape
+} # end Transform
+
+# Train Body - Cylinder
+Transform {
+	translation	0.05 1.1 0 
+	scale 1 1 1
+	rotation 0 0 1 1.57
+	children Shape {
+		appearance Appearance {
+			material Material {
+			diffuseColor 0.8 0.8 0.8
+			} # end Material
+		} # end Appearance
+
+		geometry Cylinder {
+			radius 1.2
+			height 4.9
+			side TRUE
+			bottom TRUE
+			top	TRUE
+		} # end Cylinder
+
+	} # end Shape
+} # end Transform
+
+# Train Body - Face
+Transform {
+	translation 2.405 1.1 0
+	scale 1 1 1
+	rotation 0 0 1 1.57
+	children Shape {
+		appearance Appearance {
+			material Material {
+
+			} # end Material
+			texture ImageTexture {
+				url "thomas-face.png"
+			} # end texture
+		} # end Appearance
+
+		geometry Cylinder {
+			radius 1.2
+			height 0.2
+			side FALSE
+			bottom TRUE
+			top TRUE
+		} # end Cylinder
+
+	} # end children
+} # end Transform
+
+# Train Body - Wheels
+# Proto wheel Texture 
+
+PROTO wheelTexture []
+{
+	Transform {
+	translation 1.9 -0.2 1.6
+	rotation 1 0 0 1.57
+		children Shape {
+			appearance Appearance {
+				material Material {}
+				texture ImageTexture {
+					url "thomas-wheel.png"
+				} # end Texture
+			} # end Appearance
+
+			geometry Cylinder {
+				radius 0.7
+				height 0.2
+				side FALSE
+				bottom TRUE
+				top TRUE
+			}
+
+		} # end Children
+	} # end Transform
+} # end Proto
+
+
+# use wheel texture
+# Transform {
+# 	children [
+# 		wheelTexture {}
+# 	]
+# }
+
+Transform {
+	translation 1.9 -0.2 0
+	scale 1 1 1															  
+	rotation 1 0 0 1.57
+
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.3 0.3 0.3
+			} # end Material
+		} # end Appearance
+
+		geometry Cylinder {
+			radius 0.6
+			height 3.1
+			side TRUE
+			bottom TRUE
+			top	TRUE
+		} # end Cylinder
+
+	} # end children
+} # end Transform
+
+Transform {
+	translation -1.9 -0.2 0
+	scale 1 1 1
+	rotation 1 0 0 1.57
+
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.3 0.3 0.3
+			} # end Material
+		} # end Appearance
+
+		geometry Cylinder {
+			radius 0.6
+			height 3.1
+			side TRUE
+			bottom TRUE
+			top	TRUE
+		} # end Cylinder
+
+	} # end children
+} # end Transform
+
+# Train Body - Cabin
+Transform {
+	translation -1.5 1.5 0
+	scale 1 1 1			
+
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.1 0.3 0.5
+			} # end Material
+		} # end Appearance
+
+		geometry Box{
+			size 2 2 3
+		} # end Box
+
+	} # end children
+} # end Transform
+
+
+Transform {
+	translation 2 2.5 0
+	scale 1 1 1
+
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0 0 0
+			} # end Material
+		} # end Appearance
+
+		geometry Cylinder {
+			radius 0.2
+			height .5
+			side TRUE
+			bottom TRUE
+			top	TRUE
+		} # end Cylinder
+
+	} # end children
+} # end Transform
+
+DirectionalLight {
+    on TRUE 
+    intensity 1 
+    ambientIntensity 0 
+    color 1 1 1 
+    direction 0 0 -1 
+}
+
